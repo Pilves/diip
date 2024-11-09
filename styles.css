@@ -1,0 +1,45 @@
+body {
+    background: linear-gradient(135deg, #000428, #004e92);
+    background-size: 400% 400%;
+    background-color: #000; /* Black background for contrast */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+#poem-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.line {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.stanza-title {
+    font-size: 2em;
+    margin: 40px 0 20px;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+@media (max-width: 600px) {
+    .line, .stanza-title {
+        font-size: 1.2em;
+    }
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
