@@ -69,6 +69,25 @@ const poem = [
 
 let currentIndex = 0;
 
+document.getElementById("unmute-button").addEventListener("click", function() {
+    const audio = document.getElementById("background-audio");
+    const volumeSlider = document.getElementById("volume-slider");
+
+    audio.muted = false;
+    audio.volume = 0.5;
+    audio.play();
+    
+    this.style.display = "none";
+    volumeSlider.style.display = "block";
+});
+
+document.getElementById("volume-slider").addEventListener("input", function() {
+    const audio = document.getElementById("background-audio");
+    audio.volume = this.value;
+});
+
+
+
 function displayNext() {
     if (currentIndex < poem.length) {
         const container = document.getElementById('poem-container');
@@ -118,7 +137,7 @@ function displayNext() {
                 }
 
                 displayWord();
-            }
+            } 
         }
     }
 }

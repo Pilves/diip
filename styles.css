@@ -1,21 +1,23 @@
 body {
-    background: linear-gradient(135deg, #000428, #004e92);
+    background: linear-gradient(135deg, #8e44ad, #e1bee7, #f7dc6f, #f1948a);
     background-size: 400% 400%;
-    background-color: #000; /* Black background for contrast */
-    color: #fff; /* White text */
+    background-color: #000;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     margin: 0;
     overflow: hidden;
+    animation: gradientBackground 15s ease infinite;
 }
 
 #poem-container {
     max-width: 800px;
     text-align: center;
     padding: 0 20px;
+    white-space: pre-wrap;
 }
 
 .line {
@@ -23,6 +25,7 @@ body {
     transition: opacity 2s ease-in;
     font-size: 1.5em;
     margin: 20px 0;
+    white-space: pre-wrap;
 }
 
 .stanza-title {
@@ -30,6 +33,7 @@ body {
     margin: 40px 0 20px;
     opacity: 0;
     transition: opacity 2s ease-in;
+    white-space: pre-wrap;
 }
 
 @media (max-width: 600px) {
@@ -42,4 +46,97 @@ body {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+#unmute-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Cinzel', serif;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#unmute-button:hover {
+    opacity: 1;
+}
+
+#volume-slider {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 5px;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(92, 213, 235, 0.3); /* Soft glow around the slider */
+}
+
+#volume-slider:hover {
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(92, 213, 235, 0.5); /* Intensify glow on hover */
+}
+
+#volume-slider::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, rgba(92, 213, 235, 0.6), rgba(165, 230, 177, 0.6));
+    height: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(92, 213, 235, 0.4); /* Track glow */
+}
+
+#volume-slider::-moz-range-track {
+    background: linear-gradient(90deg, rgba(92, 213, 235, 0.6), rgba(165, 230, 177, 0.6));
+    height: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(92, 213, 235, 0.4); /* Track glow */
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -5px;
+
+    /* Thumb Styling */
+    background: radial-gradient(circle, #5cd5eb 20%, #a5e6b1 80%);
+    height: 2rem;
+    width: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(92, 213, 235, 0.7), 
+                0 0 20px rgba(165, 230, 177, 0.5); /* Adds a spiritual glow */
+
+    /* Pulse Animation */
+    animation: pulse 3s infinite ease-in-out;
+}
+
+#volume-slider::-moz-range-thumb {
+    background: radial-gradient(circle, #5cd5eb 20%, #a5e6b1 80%);
+    height: 2rem;
+    width: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(92, 213, 235, 0.7), 
+                0 0 20px rgba(165, 230, 177, 0.5); /* Adds a spiritual glow */
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Pulsing animation for the thumb */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(92, 213, 235, 0.7), 
+                    0 0 20px rgba(165, 230, 177, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(92, 213, 235, 0.8), 
+                    0 0 30px rgba(165, 230, 177, 0.6);
+    }
 }
