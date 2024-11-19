@@ -38,7 +38,7 @@ An immersive, interactive experience of the poem **"The Eternal Circle"** that u
 
 Experience the poem firsthand:
 
-[🚀 **Live Demo**]([https:www.pilves.github.io/diip](https://pilves.github.io/diip/)
+[🚀 **Live Demo**]([https:www.pilves.github.io/diip](https://pilves.github.io/diip/))
 
 
 ---
